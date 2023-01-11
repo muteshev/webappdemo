@@ -25,7 +25,7 @@ public class BootStrapData implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        Publisher marat = new Publisher("Marat Uteshev", "500 Oracle Pkw", "Redwood City", "CA", "94065");
+        Publisher marat = new Publisher("Oracle Press", "500 Oracle Pkw", "Redwood City", "CA", "94065");
         publisherRepository.save(marat);
 
         Author eric = new Author("Eric", "Evans");
