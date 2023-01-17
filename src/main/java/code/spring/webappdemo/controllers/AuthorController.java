@@ -2,6 +2,7 @@ package code.spring.webappdemo.controllers;
 
 import code.spring.webappdemo.MyConfiguration;
 import code.spring.webappdemo.MyMessage;
+import code.spring.webappdemo.MyProfile;
 import code.spring.webappdemo.repositories.AuthorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -25,6 +26,8 @@ public class AuthorController {
     private String message;
     @Autowired
     private MyMessage myMessage;
+    @Autowired
+    private MyProfile myProfile;
 
     @Value("${id}")
     private String id;
@@ -42,6 +45,7 @@ public class AuthorController {
         model.addAttribute("message", message);
         model.addAttribute("myMessageInt", myMessage.getMessageInt());
         model.addAttribute("myMessageString", myMessage.getMessageString());
+        model.addAttribute("myMessageValue", myProfile.getMessageValue());
         return "authors/list";
     }
 }
